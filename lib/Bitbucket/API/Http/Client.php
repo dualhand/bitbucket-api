@@ -270,6 +270,7 @@ class Client extends ClientListener implements ClientInterface
         // change the response format
         if (strpos($url, 'format=') === false) {
             $url .= (strpos($url, '?') === false ? '?' : '&').'format='.$this->getResponseFormat();
+            $url .= (strpos($url, '?') === false ? '?' : '&').'pagelen=150';
         }
 
         $request = is_object($this->requestObj) ? $this->requestObj : new Request();
